@@ -103,11 +103,166 @@
     break-inside: avoid;
   }
   .warnbox h3 { margin-top: 0; color: var(--warn); }
+  .warnbox ul.cols { columns: 2; column-gap: 8mm; }
   .keep { break-inside: avoid; }
   .page-break { break-before: page; }
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+  .picto-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 2mm 3mm; margin: 4mm 0 2mm; break-inside: avoid; }
+  .picto { width: 22mm; text-align: center; font-size: 8.8pt; line-height: 1.3; font-weight: 700; }
+  .picto svg { width: 17mm; height: 17mm; display: block; margin: 0 auto 1.2mm; background: var(--accent-soft); border-radius: 50%; }
+  .picto.no svg { background: var(--warn-soft); }
+  .picto.no { color: var(--warn); }
+  .figs { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; margin: 3mm 0 4mm; }
+  .fig { border: 1px solid var(--line); border-radius: 4px; padding: 2mm 2mm 1.5mm; break-inside: avoid; background: #fff; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig .cap { font-size: 9.4pt; font-weight: 700; text-align: center; margin-top: 1mm; }
+  .fig.wide { grid-column: 1 / span 2; width: 120mm; margin: 0 auto; }
+  .products { display: flex; justify-content: center; align-items: flex-end; gap: 14mm; margin: 2mm 0 1mm; break-inside: avoid; }
+  .product { text-align: center; }
+  .product svg { display: block; margin: 0 auto 1.5mm; }
+  .product .cap { font-size: 9.6pt; font-weight: 700; }
+  .product .sub { font-size: 8.6pt; color: var(--muted); }
+  .timeline { margin: 3mm 0 3mm; break-inside: avoid; }
+  .timeline svg { width: 100%; height: auto; display: block; }
+
 </style>
 </head>
 <body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs>
+<symbol id="i-calendar" viewBox="0 0 64 64">
+  <rect x="8" y="12" width="48" height="44" rx="5" fill="#fff" stroke="#1f2a24" stroke-width="3"/>
+  <path d="M8 17a5 5 0 0 1 5-5h38a5 5 0 0 1 5 5v7H8z" fill="#2f6b4f"/>
+  <line x1="20" y1="6" x2="20" y2="16" stroke="#1f2a24" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="44" y1="6" x2="44" y2="16" stroke="#1f2a24" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="32" y="48" text-anchor="middle" font-size="17" font-weight="700" fill="#2f6b4f" font-family="NanumBarunGothic, NanumSquare, sans-serif">3회</text>
+</symbol>
+<symbol id="i-crack" viewBox="0 0 64 64">
+  <rect x="6" y="6" width="10" height="50" fill="#dfe3df" stroke="#5b6660" stroke-width="1.5"/>
+  <rect x="6" y="50" width="52" height="8" fill="#d9c7a5" stroke="#5b6660" stroke-width="1.5"/>
+  <rect x="20" y="46" width="38" height="4" fill="#b89c6c"/>
+  <line x1="56" y1="12" x2="33" y2="35" stroke="#1f2a24" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="31" cy="37" r="3.2" fill="#c9a227"/>
+  <path d="M29 40L19 47" stroke="#2f80c0" stroke-width="3.2" stroke-dasharray="3.5 2.5" stroke-linecap="round"/>
+  <circle cx="18" cy="48" r="5.5" fill="none" stroke="#a2391f" stroke-width="2" stroke-dasharray="2.5 2"/>
+</symbol>
+<symbol id="i-out" viewBox="0 0 64 64">
+  <rect x="6" y="8" width="24" height="48" rx="2" fill="#fff" stroke="#1f2a24" stroke-width="3"/>
+  <circle cx="25" cy="33" r="2" fill="#1f2a24"/>
+  <circle cx="46" cy="14" r="5" fill="#1f2a24"/>
+  <path d="M46 19V32M40 24H52M46 32L41 41M46 32L51 41" stroke="#1f2a24" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <path d="M35 51H58M52 45L58 51L52 57" stroke="#2f6b4f" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="i-clock" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="22" fill="#fff" stroke="#1f2a24" stroke-width="3"/>
+  <path d="M32 13v4M32 47v4M13 32h4M47 32h4" stroke="#1f2a24" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M32 32V19M32 32l9 6" stroke="#2f6b4f" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="2.5" fill="#1f2a24"/>
+</symbol>
+<symbol id="i-drop" viewBox="0 0 64 64">
+  <path d="M32 5C26 16 13 28 13 40a19 19 0 0 0 38 0C51 28 38 16 32 5z" fill="#dcebf7" stroke="#2f80c0" stroke-width="3"/>
+  <text x="32" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#2f80c0" font-family="NanumBarunGothic, NanumSquare, sans-serif">50%</text>
+</symbol>
+<symbol id="i-mask" viewBox="0 0 64 64">
+  <path d="M12 23Q4 32 14 41M52 23Q60 32 50 41" stroke="#1f2a24" stroke-width="2.5" fill="none"/>
+  <path d="M12 23Q32 13 52 23L50 40Q32 54 14 40Z" fill="#fff" stroke="#1f2a24" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M13 31Q32 26 51 31" stroke="#8a948e" stroke-width="2" fill="none"/>
+  <text x="32" y="44" text-anchor="middle" font-size="8" font-weight="700" fill="#2f6b4f" font-family="NanumBarunGothic, NanumSquare, sans-serif">KF94</text>
+</symbol>
+<symbol id="i-gloves" viewBox="0 0 64 64">
+  <g fill="#6c9be0" stroke="#1f2a24" stroke-width="2.2">
+    <rect x="17" y="10" width="7" height="26" rx="3.5"/>
+    <rect x="25" y="6" width="7" height="28" rx="3.5"/>
+    <rect x="33" y="7" width="7" height="28" rx="3.5"/>
+    <rect x="41" y="12" width="7" height="24" rx="3.5"/>
+    <rect x="45" y="27" width="7" height="18" rx="3.5" transform="rotate(35 48 36)"/>
+    <rect x="16" y="26" width="32" height="26" rx="8"/>
+  </g>
+  <rect x="18" y="50" width="28" height="8" rx="2" fill="#4f7fc4" stroke="#1f2a24" stroke-width="2.2"/>
+</symbol>
+<symbol id="i-window" viewBox="0 0 64 64">
+  <rect x="5" y="8" width="32" height="48" rx="2" fill="#eaf4fb" stroke="#1f2a24" stroke-width="3"/>
+  <path d="M21 8V56M5 32H37" stroke="#1f2a24" stroke-width="2.5"/>
+  <path d="M41 20Q50 15 59 20M41 32Q51 27 61 32M41 44Q50 39 59 44" stroke="#2f6b4f" stroke-width="3" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="i-lock" viewBox="0 0 64 64">
+  <rect x="10" y="10" width="44" height="46" rx="3" fill="#fff" stroke="#1f2a24" stroke-width="3"/>
+  <line x1="32" y1="10" x2="32" y2="56" stroke="#1f2a24" stroke-width="2.5"/>
+  <path d="M26.5 31v-5a5.5 5.5 0 0 1 11 0v5" stroke="#1f2a24" stroke-width="3" fill="none"/>
+  <rect x="23" y="30" width="18" height="14" rx="2" fill="#2f6b4f"/>
+</symbol>
+<symbol id="i-soap" viewBox="0 0 64 64">
+  <rect x="8" y="34" width="36" height="20" rx="8" fill="#fff" stroke="#1f2a24" stroke-width="3"/>
+  <g fill="#eaf4fb" stroke="#2f80c0" stroke-width="2.5">
+    <circle cx="45" cy="20" r="8"/><circle cx="29" cy="20" r="5.5"/><circle cx="53" cy="37" r="4.5"/>
+  </g>
+</symbol>
+<symbol id="i-cat" viewBox="0 0 64 64">
+  <path d="M14 30L17 10L28 20Q32 19 36 20L47 10L50 30Q52 51 32 53Q12 51 14 30Z" fill="#fff" stroke="#1f2a24" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="25" cy="32" rx="2.5" ry="3.5" fill="#1f2a24"/><ellipse cx="39" cy="32" rx="2.5" ry="3.5" fill="#1f2a24"/>
+  <path d="M30 39H34L32 41.5Z" fill="#1f2a24"/>
+  <path d="M7 37L22 40M7 44L22 43M42 40L57 37M42 43L57 44" stroke="#1f2a24" stroke-width="2"/>
+</symbol>
+<symbol id="i-fish" viewBox="0 0 64 64">
+  <rect x="6" y="14" width="52" height="40" rx="3" fill="#eaf4fb" stroke="#1f2a24" stroke-width="3"/>
+  <path d="M6 22H58" stroke="#2f80c0" stroke-width="2"/>
+  <path d="M40 38L50 31V45Z" fill="#f2a33a" stroke="#1f2a24" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="30" cy="38" rx="11" ry="7" fill="#f2a33a" stroke="#1f2a24" stroke-width="2"/>
+  <circle cx="24" cy="36.5" r="1.6" fill="#1f2a24"/>
+</symbol>
+<symbol id="i-crib" viewBox="0 0 64 64">
+  <circle cx="32" cy="14" r="6.5" fill="#f6d7b8" stroke="#1f2a24" stroke-width="2.5"/>
+  <rect x="8" y="22" width="48" height="28" fill="#fff" stroke="#1f2a24" stroke-width="3"/>
+  <path d="M16 22V50M24 22V50M32 22V50M40 22V50M48 22V50" stroke="#1f2a24" stroke-width="2.2"/>
+  <path d="M10 50V58M54 50V58" stroke="#1f2a24" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="i-bed" viewBox="0 0 64 64">
+  <rect x="5" y="14" width="7" height="40" rx="2" fill="#f1e6d3" stroke="#1f2a24" stroke-width="2.5"/>
+  <rect x="12" y="36" width="47" height="12" fill="#fff" stroke="#1f2a24" stroke-width="2.5"/>
+  <path d="M26 28H59V36H26Z" fill="#cfe3d6" stroke="#1f2a24" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="14" y="26" width="13" height="10" rx="4" fill="#fff" stroke="#1f2a24" stroke-width="2.5"/>
+  <path d="M57 48V55" stroke="#1f2a24" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="i-mist" viewBox="0 0 64 64">
+  <line x1="55" y1="57" x2="37" y2="38" stroke="#1f2a24" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="35" cy="36" r="3.2" fill="#c9a227"/>
+  <g fill="#2f80c0" opacity="0.75">
+    <circle cx="28" cy="29" r="2"/><circle cx="22" cy="24" r="2"/><circle cx="30" cy="20" r="2"/>
+    <circle cx="16" cy="16" r="2"/><circle cx="24" cy="13" r="2"/><circle cx="12" cy="26" r="2"/>
+    <circle cx="33" cy="11" r="2"/><circle cx="18" cy="32" r="2"/><circle cx="10" cy="17" r="1.6"/>
+    <circle cx="38" cy="22" r="1.6"/><circle cx="20" cy="7" r="1.6"/><circle cx="8" cy="34" r="1.6"/>
+  </g>
+</symbol>
+<symbol id="i-trap" viewBox="0 0 64 64">
+  <path d="M6 52L20 20H44L58 52Z" fill="#f4d03f" stroke="#1f2a24" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M22 52L32 32L42 52Z" fill="#fff" stroke="#1f2a24" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M6 52H58" stroke="#1f2a24" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="i-dehum" viewBox="0 0 64 64">
+  <rect x="14" y="6" width="36" height="52" rx="5" fill="#fff" stroke="#1f2a24" stroke-width="3"/>
+  <path d="M20 14H44M20 19H44M20 24H44" stroke="#8a948e" stroke-width="2.2"/>
+  <rect x="22" y="30" width="20" height="9" rx="1.5" fill="#2f6b4f"/>
+  <path d="M32 42c-2 3-4 5-4 7a4 4 0 0 0 8 0c0-2-2-4-4-7z" fill="#dcebf7" stroke="#2f80c0" stroke-width="2"/>
+</symbol>
+<symbol id="i-119" viewBox="0 0 64 64">
+  <rect x="18" y="5" width="28" height="54" rx="5" fill="#fff" stroke="#1f2a24" stroke-width="3"/>
+  <rect x="22" y="12" width="20" height="36" rx="1.5" fill="#fbece7"/>
+  <text x="32" y="35" text-anchor="middle" font-size="12" font-weight="700" fill="#a2391f" font-family="NanumBarunGothic, NanumSquare, sans-serif">119</text>
+  <circle cx="32" cy="53" r="2" fill="#1f2a24"/>
+</symbol>
+<symbol id="i-bottle" viewBox="0 0 64 64">
+  <rect x="26" y="5" width="12" height="9" rx="1.5" fill="#fff" stroke="#1f2a24" stroke-width="2.5"/>
+  <path d="M24 14H40L46 21V55a3 3 0 0 1-3 3H21a3 3 0 0 1-3-3V21Z" fill="#fff" stroke="#1f2a24" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M18 30L46 26V33L18 37Z" fill="#2f8f4e"/>
+  <path d="M18 44L46 40V52H18Z" fill="#f4d03f"/>
+</symbol>
+<symbol id="i-no" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="35" fill="none" stroke="#a2391f" stroke-width="5"/>
+  <line x1="7" y1="7" x2="57" y2="57" stroke="#a2391f" stroke-width="5" stroke-linecap="round"/>
+</symbol>
+</defs>
+</svg>
 
 <div class="cover">
   <h1>좀벌레 퇴치 가정용 매뉴얼</h1>
@@ -124,6 +279,7 @@
     <li>실내 습도를 낮춰야 다시 생기지 않습니다.</li>
   </ol>
 </div>
+<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-calendar" width="64" height="64"/></svg>한 달 간격 3번</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-crack" width="64" height="64"/></svg>틈새에만</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-out" width="64" height="64"/></svg>아이·동물은 밖으로</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-clock" width="64" height="64"/></svg>다 마른 뒤 입장</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-drop" width="64" height="64"/></svg>습도 50% 이하</div></div>
 
 <h2><span class="num">2</span>퍼메트린은 사람에게 어떤가</h2>
 <p class="lead">퍼메트린은 사람 몸에 쌓이지 않습니다.</p>
@@ -213,6 +369,39 @@
 </table>
 
 <h2 class="page-break"><span class="num">4</span>준비물</h2>
+<div class="products">
+  <div class="product"><svg width="150" height="186" viewBox="0 0 170 210">
+  <ellipse cx="70" cy="198" rx="54" ry="6" fill="#e6e9e7"/>
+  <rect x="22" y="56" width="96" height="136" rx="18" fill="#f2f6f8"/>
+  <path d="M23.5 122H116.5V174a16.5 16.5 0 0 1-16.5 16.5H40a16.5 16.5 0 0 1-16.5-16.5Z" fill="#d6e8f6"/>
+  <rect x="22" y="56" width="96" height="136" rx="18" fill="none" stroke="#4b5560" stroke-width="2.5"/>
+  <path d="M28 82H36M28 102H36M28 122H36M28 142H36M28 162H36" stroke="#8a948e" stroke-width="2"/>
+  <rect x="44" y="84" width="56" height="24" rx="3" fill="#fff" stroke="#cfd8d2"/>
+  <text x="72" y="101" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">5L</text>
+  <rect x="62" y="14" width="16" height="30" fill="#9aa3ab" stroke="#4b5560" stroke-width="1.5"/>
+  <rect x="38" y="6" width="64" height="11" rx="5.5" fill="#3b4148"/>
+  <rect x="48" y="40" width="44" height="18" rx="3" fill="#3b4148"/>
+  <circle cx="104" cy="50" r="4.5" fill="#e05a2b"/>
+  <path d="M117 152C152 152 150 112 140 98" stroke="#3b4148" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <rect x="133" y="84" width="12" height="30" rx="4" fill="#3b4148" transform="rotate(-15 139 99)"/>
+  <line x1="141" y1="86" x2="160" y2="22" stroke="#9aa3ab" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="161" cy="18" r="5" fill="#c9a227"/>
+</svg><div class="cap">압축분무기</div><div class="sub">예: 스마토 SM-CS5L</div></div>
+  <div class="product"><svg width="92" height="186" viewBox="0 0 100 210">
+  <ellipse cx="50" cy="200" rx="40" ry="5" fill="#e6e9e7"/>
+  <rect x="36" y="6" width="28" height="22" rx="3" fill="#fff" stroke="#4b5560" stroke-width="2"/>
+  <path d="M41 9V25M46 9V25M51 9V25M56 9V25M61 9V25" stroke="#cfd8d2" stroke-width="1.5"/>
+  <path d="M38 28H62V36Q84 44 84 64V188a8 8 0 0 1-8 8H24a8 8 0 0 1-8-8V64Q16 44 38 36Z" fill="#fff" stroke="#4b5560" stroke-width="2.5"/>
+  <path d="M17.2 94L82.8 78V102L17.2 118Z" fill="#2f8f4e"/>
+  <text x="50" y="102" text-anchor="middle" font-size="10" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif" transform="rotate(-13 50 98)">퍼메트린</text>
+  <text x="50" y="138" text-anchor="middle" font-size="15" font-weight="700" fill="#1f3f8f" font-family="NanumBarunGothic, NanumSquare, sans-serif">살충제</text>
+  <path d="M17.2 160L82.8 146V188a6.8 6.8 0 0 1-6.8 6.8H24a6.8 6.8 0 0 1-6.8-6.8Z" fill="#f4d03f"/>
+  <text x="50" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">1L</text>
+</svg><div class="cap">퍼메트린 살충제 1L</div><div class="sub">예: 파비 1L 리필용</div></div>
+</div>
+<p class="note" style="text-align:center">그림은 이해를 돕기 위한 예시입니다.</p>
+<p class="note" style="text-align:center">실제 제품의 모양과 색은 다를 수 있습니다.</p>
+<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-mask" width="64" height="64"/></svg>KF94 마스크</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-gloves" width="64" height="64"/></svg>니트릴 장갑</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-trap" width="64" height="64"/></svg>끈끈이 트랩</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-dehum" width="64" height="64"/></svg>제습기</div></div>
 <table>
   <tr><th style="width:24%">항목</th><th>내용</th></tr>
   <tr><td class="label">살충제</td><td><ul>
@@ -245,6 +434,30 @@
 </table>
 
 <h3>분무기 설정</h3>
+<div class="figs"><div class="fig wide"><svg viewBox="0 0 240 118">
+  <rect x="6" y="8" width="10" height="88" fill="#e3e7e3" stroke="#5b6660" stroke-width="1.2"/>
+  <rect x="6" y="94" width="104" height="10" fill="#d9c7a5" stroke="#5b6660" stroke-width="1.2"/>
+  <rect x="21" y="90" width="89" height="4" fill="#b89c6c"/>
+  <line x1="98" y1="22" x2="45" y2="75" stroke="#1f2a24" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="43" cy="77" r="3.6" fill="#c9a227"/>
+  <path d="M40 80L22 92" stroke="#2f80c0" stroke-width="3.5" stroke-dasharray="5 3" stroke-linecap="round"/>
+  <circle cx="92" cy="62" r="11" fill="#2f6b4f"/>
+  <text x="92" y="67" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">O</text>
+  <text x="58" y="115" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2f6b4f" font-family="NanumBarunGothic, NanumSquare, sans-serif">틈 가까이에서 굵은 물줄기로</text>
+  <line x1="120" y1="8" x2="120" y2="104" stroke="#cfd8d2" stroke-width="1.2"/>
+  <line x1="226" y1="96" x2="192" y2="62" stroke="#1f2a24" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="190" cy="60" r="3.6" fill="#c9a227"/>
+  <g fill="#2f80c0" opacity="0.7">
+    <circle cx="180" cy="50" r="2"/><circle cx="172" cy="44" r="2"/><circle cx="182" cy="38" r="2"/>
+    <circle cx="164" cy="34" r="2"/><circle cx="174" cy="28" r="2"/><circle cx="158" cy="46" r="2"/>
+    <circle cx="186" cy="26" r="2"/><circle cx="166" cy="54" r="2"/><circle cx="152" cy="36" r="1.6"/>
+    <circle cx="190" cy="40" r="1.6"/><circle cx="168" cy="18" r="1.6"/><circle cx="150" cy="56" r="1.6"/>
+    <circle cx="158" cy="24" r="1.6"/><circle cx="144" cy="44" r="1.6"/><circle cx="178" cy="16" r="1.6"/>
+  </g>
+  <circle cx="222" cy="26" r="11" fill="#a2391f"/>
+  <text x="222" y="31" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">X</text>
+  <text x="180" y="115" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a2391f" font-family="NanumBarunGothic, NanumSquare, sans-serif">공중에 안개처럼 뿌리지 않기</text>
+</svg></div></div>
 <ul>
   <li>노즐은 굵은 물줄기로 맞춥니다.</li>
   <li>미세한 안개는 공기 중에 퍼집니다.</li>
@@ -259,6 +472,69 @@
 <p>좀벌레는 어둡고 습한 틈에 숨어 삽니다.</p>
 <p>틈새가 충분히 젖을 만큼 뿌립니다.</p>
 <p>바닥에 약이 고일 만큼 뿌리지는 않습니다.</p>
+<div class="figs"><div class="fig"><svg viewBox="0 0 240 150">
+  <rect x="10" y="6" width="34" height="120" fill="#e3e7e3" stroke="#5b6660" stroke-width="1.5"/>
+  <text x="27" y="64" text-anchor="middle" font-size="12" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">벽</text>
+  <rect x="10" y="126" width="222" height="18" fill="#d9c7a5" stroke="#5b6660" stroke-width="1.5"/>
+  <rect x="52" y="120" width="180" height="6" fill="#b89c6c"/>
+  <text x="112" y="116" text-anchor="middle" font-size="10" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">장판</text>
+  <rect x="148" y="104" width="62" height="11" rx="1" fill="#fff" stroke="#5b6660" stroke-width="1.5" transform="rotate(-8 179 110)"/>
+  <text x="168" y="98" text-anchor="middle" font-size="9.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">뗀 걸레받이</text>
+  <line x1="226" y1="16" x2="80" y2="97" stroke="#1f2a24" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="77" cy="99" r="4.2" fill="#c9a227"/>
+  <path d="M72 102L53 117" stroke="#2f80c0" stroke-width="4" stroke-dasharray="5 3" stroke-linecap="round"/>
+  <circle cx="48" cy="122" r="9" fill="none" stroke="#a2391f" stroke-width="2" stroke-dasharray="3 2"/>
+  <path d="M50 112L60 40" stroke="#a2391f" stroke-width="1.5"/>
+  <text x="62" y="36" font-size="11" font-weight="700" fill="#a2391f" font-family="NanumBarunGothic, NanumSquare, sans-serif">벽과 장판 사이 틈</text>
+</svg><div class="cap">① 걸레받이를 떼고 벽과 장판 사이 틈</div></div><div class="fig"><svg viewBox="0 0 240 150">
+  <rect x="6" y="6" width="14" height="120" fill="#e3e7e3" stroke="#5b6660" stroke-width="1.5"/>
+  <rect x="6" y="126" width="228" height="18" fill="#d9c7a5" stroke="#5b6660" stroke-width="1.5"/>
+  <rect x="24" y="14" width="110" height="104" rx="2" fill="#f1e6d3" stroke="#5b6660" stroke-width="1.5"/>
+  <line x1="79" y1="14" x2="79" y2="118" stroke="#5b6660" stroke-width="1.5"/>
+  <rect x="72" y="56" width="3" height="16" fill="#5b6660"/><rect x="83" y="56" width="3" height="16" fill="#5b6660"/>
+  <rect x="30" y="118" width="7" height="8" fill="#5b6660"/><rect x="121" y="118" width="7" height="8" fill="#5b6660"/>
+  <ellipse cx="79" cy="122" rx="52" ry="6" fill="none" stroke="#a2391f" stroke-width="2" stroke-dasharray="3 2"/>
+  <line x1="230" y1="34" x2="162" y2="106" stroke="#1f2a24" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="159" cy="109" r="4.2" fill="#c9a227"/>
+  <path d="M154 112L132 121" stroke="#2f80c0" stroke-width="4" stroke-dasharray="5 3" stroke-linecap="round"/>
+  <circle cx="44" cy="34" r="9" fill="#a2391f"/>
+  <text x="44" y="38.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">X</text>
+  <text x="58" y="38" font-size="9.5" font-weight="700" fill="#a2391f" font-family="NanumBarunGothic, NanumSquare, sans-serif">옷장 안쪽</text>
+</svg><div class="cap">② 옷장·가구 아래 틈</div></div><div class="fig"><svg viewBox="0 0 240 150">
+  <rect x="6" y="6" width="12" height="120" fill="#e3e7e3" stroke="#5b6660" stroke-width="1.5"/>
+  <rect x="6" y="126" width="228" height="18" fill="#d9c7a5" stroke="#5b6660" stroke-width="1.5"/>
+  <rect x="26" y="8" width="124" height="110" rx="6" fill="#f4f6f8" stroke="#5b6660" stroke-width="1.5"/>
+  <line x1="26" y1="48" x2="150" y2="48" stroke="#cfd8d2" stroke-width="1.5"/>
+  <rect x="150" y="18" width="5" height="24" rx="2" fill="#5b6660"/><rect x="150" y="56" width="5" height="34" rx="2" fill="#5b6660"/>
+  <rect x="32" y="118" width="8" height="8" fill="#5b6660"/><rect x="136" y="118" width="8" height="8" fill="#5b6660"/>
+  <rect x="30" y="86" width="34" height="28" rx="2" fill="#c9ced3" stroke="#5b6660" stroke-width="1.2"/>
+  <path d="M34 92H60M34 98H60M34 104H60M34 110H60" stroke="#5b6660" stroke-width="1.5"/>
+  <circle cx="47" cy="72" r="9" fill="#a2391f"/>
+  <text x="47" y="76.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">X</text>
+  <text x="60" y="76" font-size="9" font-weight="700" fill="#a2391f" font-family="NanumBarunGothic, NanumSquare, sans-serif">뒷면 컴프레서</text>
+  <ellipse cx="112" cy="122" rx="30" ry="5" fill="none" stroke="#2f6b4f" stroke-width="2" stroke-dasharray="3 2"/>
+  <line x1="232" y1="58" x2="176" y2="110" stroke="#1f2a24" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="173" cy="113" r="4.2" fill="#c9a227"/>
+  <path d="M168 116L146 122" stroke="#2f80c0" stroke-width="4" stroke-dasharray="5 3" stroke-linecap="round"/>
+  <circle cx="122" cy="100" r="9" fill="#2f6b4f"/>
+  <text x="122" y="104.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">O</text>
+</svg><div class="cap">③ 냉장고 아래 앞쪽 틈</div></div><div class="fig"><svg viewBox="0 0 240 150">
+  <text x="12" y="20" font-size="11" font-weight="700" fill="#2f6b4f" font-family="NanumBarunGothic, NanumSquare, sans-serif">아랫면이 위로 오게 뒤집기</text>
+  <rect x="10" y="112" width="220" height="8" fill="#d9c7a5" stroke="#5b6660" stroke-width="1.2"/>
+  <rect x="20" y="70" width="200" height="40" rx="10" fill="#f6f1e6" stroke="#5b6660" stroke-width="1.5"/>
+  <path d="M30 90H210" stroke="#c9bfa9" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="32" y="66" width="30" height="7" fill="#f4d03f" stroke="#5b6660" stroke-width="1"/>
+  <text x="47" y="60" text-anchor="middle" font-size="8.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">표시 테이프</text>
+  <line x1="214" y1="26" x2="166" y2="50" stroke="#1f2a24" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="163" cy="52" r="3.8" fill="#c9a227"/>
+  <path d="M160 55L140 66M161 56L158 67M163 56L176 66" stroke="#2f80c0" stroke-width="2" stroke-dasharray="3 3" stroke-linecap="round"/>
+  <g fill="#2f80c0" opacity="0.6">
+    <circle cx="90" cy="69" r="1.6"/><circle cx="110" cy="68" r="1.6"/><circle cx="128" cy="69" r="1.6"/>
+    <circle cx="146" cy="68" r="1.6"/><circle cx="168" cy="69" r="1.6"/><circle cx="188" cy="68" r="1.6"/>
+    <circle cx="74" cy="68" r="1.6"/><circle cx="204" cy="69" r="1.6"/>
+  </g>
+  <text x="120" y="137" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a2391f" font-family="NanumBarunGothic, NanumSquare, sans-serif">아이가 눕는 윗면은 뿌리지 않기</text>
+</svg><div class="cap">④ 매트리스 아랫면에 가볍게</div></div></div>
 <table>
   <tr><th style="width:24%">장소</th><th style="width:38%">방법</th><th>주의</th></tr>
   <tr><td class="label">걸레받이 안쪽<br>(장판과 벽 사이)</td>
@@ -296,6 +572,7 @@
 <p>하지만 알은 살아남습니다.</p>
 <p>좀벌레 알은 2~8주 뒤에 깨어납니다.</p>
 <p>그래서 한 달 간격으로 3번 뿌립니다.</p>
+<div class="timeline"><svg viewBox="0 0 600 94"><line x1="70" y1="34" x2="530" y2="34" stroke="#cfd8d2" stroke-width="4"/><text x="150" y="24" text-anchor="middle" font-size="10" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">1개월</text><text x="303" y="24" text-anchor="middle" font-size="10" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">1개월</text><text x="456" y="24" text-anchor="middle" font-size="10" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">1개월</text><circle cx="73" cy="34" r="17" fill="#2f6b4f"/><text x="73" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">1</text><text x="73" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">1회차</text><text x="73" y="86" text-anchor="middle" font-size="10.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">시작</text><circle cx="226" cy="34" r="17" fill="#2f6b4f"/><text x="226" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">2</text><text x="226" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">2회차</text><text x="226" y="86" text-anchor="middle" font-size="10.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">1개월 뒤</text><circle cx="379" cy="34" r="17" fill="#2f6b4f"/><text x="379" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">3</text><text x="379" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">3회차</text><text x="379" y="86" text-anchor="middle" font-size="10.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">2개월 뒤</text><circle cx="532" cy="34" r="17" fill="#2f80c0"/><text x="532" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">✓</text><text x="532" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">확인</text><text x="532" y="86" text-anchor="middle" font-size="10.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">3개월 뒤</text></svg></div>
 <table class="keep">
   <tr><th style="width:24%">시기</th><th>할 일</th></tr>
   <tr><td class="label">1회차</td><td><ul>
@@ -323,6 +600,7 @@
 </div>
 
 <h2><span class="num">7</span>안전 수칙</h2>
+<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-out" width="64" height="64"/></svg>아이·동물 내보내기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-mask" width="64" height="64"/></svg>마스크 쓰기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-gloves" width="64" height="64"/></svg>장갑 끼기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-window" width="64" height="64"/></svg>창문 열기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-clock" width="64" height="64"/></svg>2~4시간 말리기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-soap" width="64" height="64"/></svg>비누로 씻기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-lock" width="64" height="64"/></svg>잠가서 보관</div></div>
 <div class="keep">
 <h3>뿌리기 전</h3>
 <ul class="check">
@@ -411,7 +689,8 @@
 <h2 class="page-break"><span class="num">9</span>하지 말 것과 응급 대처</h2>
 <div class="warnbox">
   <h3>하지 말 것</h3>
-  <ul>
+<div class="picto-row"><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-cat" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>고양이 있는 집</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-mist" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>공중 분사</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-bed" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>이불·베개</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-crib" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>아기 침대</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-fish" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>어항 있는 방</div></div>
+  <ul class="cols">
     <li>고양이가 있는 집에서는 퍼메트린을 쓰지 않습니다.</li>
     <li>공중에 안개처럼 뿌리지 않습니다.</li>
     <li>방 전체에 뿌리지 않습니다.</li>
@@ -427,6 +706,7 @@
 </div>
 
 <h3>응급 대처</h3>
+<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-soap" width="64" height="64"/></svg>피부는 비누로</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-window" width="64" height="64"/></svg>바깥 공기로</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-bottle" width="64" height="64"/></svg>제품 병 챙기기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-119" width="64" height="64"/></svg>숨차면 119</div></div>
 <table>
   <tr><th style="width:28%">상황</th><th>바로 할 일</th></tr>
   <tr><td class="label">피부에 묻음</td><td><ul>
