@@ -125,10 +125,16 @@
   .timeline { margin: 3mm 0 3mm; break-inside: avoid; }
   .timeline svg { width: 100%; height: auto; display: block; }
 
+
+  .age { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin: 2mm 0 2mm; }
+  .agebox { border: 1px solid var(--line); border-radius: 4px; padding: 2.5mm 4mm 1.5mm; break-inside: avoid; }
+  .agebox h3 { margin: 0 0 1mm; font-size: 11pt; color: var(--accent); }
+  .agebox.warn { border-color: var(--warn); background: var(--warn-soft); }
+  .agebox.warn h3 { color: var(--warn); }
+  .conclusion { background: var(--accent-soft); border-radius: 4px; padding: 3mm 5mm; font-weight: 700; margin: 3mm 0; }
 </style>
 </head>
 <body>
-
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <defs>
 <symbol id="i-calendar" viewBox="0 0 64 64">
@@ -270,105 +276,35 @@
 </div>
 
 <h2><span class="num">1</span>한눈에 보기</h2>
-<div class="summary">
-  <ol>
-    <li>퍼메트린 살충제를 한 달 간격으로 3번 뿌립니다.</li>
-    <li>사람 손이 닿지 않는 틈새에만 뿌립니다.</li>
-    <li>아이와 반려동물이 없을 때 뿌립니다.</li>
-    <li>약이 다 마른 뒤에 방에 들어옵니다.</li>
-    <li>실내 습도를 낮춰야 다시 생기지 않습니다.</li>
-  </ol>
+<div class="summary"><ol>
+  <li>한 달 간격으로 3번 뿌립니다.</li>
+  <li>손이 닿지 않는 틈새에만 뿌립니다.</li>
+  <li>아이와 반려동물이 없을 때 뿌립니다.</li>
+  <li>약이 다 마른 뒤에 들어옵니다.</li>
+</ol></div>
+<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-calendar" width="64" height="64"/></svg>한 달 간격 3번</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-crack" width="64" height="64"/></svg>틈새에만</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-out" width="64" height="64"/></svg>아이·동물은 밖으로</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-clock" width="64" height="64"/></svg>다 마른 뒤 입장</div></div>
+
+<h2><span class="num">2</span>퍼메트린, 실제로 얼마나 위험한가</h2>
+<p class="lead">퍼메트린은 사람에게 독성이 낮은 살충 성분입니다.</p>
+<ul><li>퍼메트린은 몸에 쌓이지 않습니다.</li><li>몸에 들어온 퍼메트린은 며칠 안에 소변으로 나갑니다.</li><li>피부로는 거의 흡수되지 않습니다.</li><li>퍼메트린 5% 크림은 생후 2개월 아기의 옴 치료에도 씁니다.</li><li>가정용 살충제의 농도는 이 크림보다 훨씬 낮습니다.</li><li>가장 흔한 부작용은 피부 따끔거림입니다.</li><li>분무 입자를 들이마시면 기침이 날 수 있습니다.</li><li>확인된 장기적 위험은 없습니다.</li></ul>
+<p>다만 아이는 어른보다 노출에 약합니다.</p>
+<ul><li>아이는 바닥을 기어 다닙니다.</li><li>아이는 손을 자주 입에 넣습니다.</li><li>영유아는 약을 분해하는 능력이 약합니다.</li></ul>
+<p>고양이와 물고기에게는 매우 위험합니다.</p>
+<div class="conclusion">위험은 성분보다 뿌리는 방법에서 생깁니다.</div>
+
+<h2><span class="num">3</span>이것만 조심하세요</h2>
+<ul><li>아이와 반려동물을 내보낸 뒤 뿌립니다.</li><li>창문을 열고 뿌립니다.</li><li>마스크와 장갑을 씁니다.</li><li>공중에 안개처럼 뿌리지 않습니다.</li><li>이불, 베개, 옷, 장난감에는 뿌리지 않습니다.</li><li>2~4시간 환기한 뒤 방에 들어옵니다.</li><li>손이 닿는 바닥에 튄 약은 물걸레로 닦습니다.</li><li>약과 분무기는 아이 손이 닿지 않는 곳에 둡니다.</li><li>고양이가 있는 집에서는 쓰지 않습니다.</li><li>어항이 있는 방에서는 뿌리지 않습니다.</li></ul>
+<div class="picto-row"><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-mist" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>공중 분사</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-bed" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>이불·베개</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-cat" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>고양이 있는 집</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-fish" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>어항 있는 방</div></div>
+
+<h2><span class="num">4</span>아이와 임산부는 이렇게</h2>
+<div class="age">
+  <div class="agebox warn"><h3>돌 전 아기</h3><ul><li>아기 침대에는 뿌리지 않습니다.</li><li>아기 매트리스에는 뿌리지 않습니다.</li><li>아기 매트리스는 세워서 말립니다.</li><li>아기는 다음 날 방에 들입니다.</li></ul></div>
+  <div class="agebox"><h3>1~3세 아이</h3><ul><li>아이 매트리스는 아랫면에만 뿌립니다.</li><li>아이가 노는 바닥에는 뿌리지 않습니다.</li><li>약이 다 마른 뒤 방에 들입니다.</li></ul></div>
+  <div class="agebox"><h3>천식·아토피가 있는 아이</h3><ul><li>끈끈이 트랩이나 붕산을 먼저 씁니다.</li><li>뿌린 날은 다른 방에서 재웁니다.</li></ul></div>
+  <div class="agebox"><h3>임산부</h3><ul><li>직접 뿌리지 않습니다.</li><li>다른 가족이 뿌립니다.</li><li>뿌리는 동안 집 밖에 있습니다.</li></ul></div>
 </div>
-<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-calendar" width="64" height="64"/></svg>한 달 간격 3번</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-crack" width="64" height="64"/></svg>틈새에만</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-out" width="64" height="64"/></svg>아이·동물은 밖으로</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-clock" width="64" height="64"/></svg>다 마른 뒤 입장</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-drop" width="64" height="64"/></svg>습도 50% 이하</div></div>
 
-<h2><span class="num">2</span>퍼메트린은 사람에게 어떤가</h2>
-<p class="lead">퍼메트린은 사람 몸에 쌓이지 않습니다.</p>
-<p>퍼메트린은 포유류에 대한 독성이 낮은 살충 성분입니다.</p>
-<p>위험은 성분보다 뿌리는 방법에서 생깁니다.</p>
-<table>
-  <tr><th style="width:24%">항목</th><th>내용</th></tr>
-  <tr><td class="label">체내 축적</td><td><ul>
-    <li>간과 혈액의 효소가 퍼메트린을 빠르게 분해합니다.</li>
-    <li>분해된 물질은 대부분 며칠 안에 소변으로 나갑니다.</li>
-    <li>DDT처럼 지방에 오래 남는 성분이 아닙니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">피부 흡수</td><td><ul>
-    <li>퍼메트린은 피부로 거의 흡수되지 않습니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">의약품 사용</td><td><ul>
-    <li>퍼메트린 5% 크림은 옴 치료제입니다.</li>
-    <li>이 크림은 생후 2개월 이상 아기의 피부에도 바릅니다.</li>
-    <li>가정용 살충제의 퍼메트린 농도는 이보다 훨씬 낮습니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">급성 증상</td><td><ul>
-    <li>피부가 따끔거리거나 가려울 수 있습니다.</li>
-    <li>눈, 코, 목이 따가울 수 있습니다.</li>
-    <li>천식이 있는 아이는 기침을 할 수 있습니다.</li>
-    <li>이런 증상은 주로 분무 입자를 직접 들이마셨을 때 생깁니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">장기 영향</td><td><ul>
-    <li>확정된 장기 영향은 없습니다.</li>
-    <li>아이의 행동 문제와의 관련을 살핀 연구가 있습니다.</li>
-    <li>그 연구들의 결과는 서로 엇갈립니다.</li>
-    <li>미국 환경보호청은 퍼메트린을 “먹었을 때 발암 가능성 있음”으로 분류했습니다.</li>
-    <li>이 분류는 고용량을 먹인 동물실험에 근거합니다.</li>
-    <li>국제암연구소는 퍼메트린을 “발암성 분류 불가”로 봅니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">아이가 더 민감한 이유</td><td><ul>
-    <li>아이는 체중에 비해 노출량이 큽니다.</li>
-    <li>아이는 바닥을 기어 다닙니다.</li>
-    <li>아이는 손을 자주 입에 넣습니다.</li>
-    <li>영유아는 약을 분해하는 효소가 덜 발달했습니다.</li>
-  </ul></td></tr>
-  <tr class="danger"><td class="label">고양이</td><td><ul>
-    <li>퍼메트린은 고양이에게 매우 위험합니다.</li>
-    <li>고양이는 소량에도 경련을 일으킬 수 있습니다.</li>
-  </ul></td></tr>
-</table>
-<p class="note">수치와 분류는 일반적인 의학·규제 자료를 정리한 것입니다.</p>
-<p class="note">이 매뉴얼은 의사의 진료를 대신하지 않습니다.</p>
-
-<h2 class="page-break"><span class="num">3</span>나이별·가족별 기준</h2>
-<p>가정용 살충제에는 법적인 나이 제한이 없습니다.</p>
-<p>아래 표는 이 매뉴얼의 안전 기준입니다.</p>
-<p>제품 라벨의 주의 문구가 더 엄격하면 라벨을 따릅니다.</p>
-<table>
-  <tr><th style="width:19%">대상</th><th style="width:27%">뿌리는 곳</th><th style="width:22%">들어오는 시점</th><th>추가 수칙</th></tr>
-  <tr><td class="label">돌 전 아기<br>(0~12개월)</td>
-    <td><ul><li>틈새만</li><li>아기 침대 제외</li><li>아기 매트리스 제외</li></ul></td>
-    <td>가능하면 다음 날</td>
-    <td><ul><li>아기 매트리스는 세워서 말립니다.</li><li>아기 매트리스는 햇볕에 말립니다.</li></ul></td></tr>
-  <tr><td class="label">기고 걷는 아이<br>(1~3세)</td>
-    <td><ul><li>틈새</li><li>가구 아래</li><li>아이 매트리스 아랫면</li></ul></td>
-    <td>약이 다 마른 뒤<br>(최소 2~4시간)</td>
-    <td><ul><li>손 닿는 바닥에 묻은 약은 물걸레로 닦습니다.</li><li>장난감에 묻은 약은 물로 씻습니다.</li></ul></td></tr>
-  <tr><td class="label">3세 이상</td>
-    <td>이 매뉴얼의 뿌리는 곳 전부</td>
-    <td>약이 다 마른 뒤</td>
-    <td><ul><li>뿌린 틈새에 손을 넣지 않도록 알려줍니다.</li></ul></td></tr>
-  <tr><td class="label">천식·아토피가 있는 아이</td>
-    <td><ul><li>틈새만</li><li>최소량</li></ul></td>
-    <td>다음 날 권장</td>
-    <td><ul><li>붕산, 규조토, 끈끈이 트랩을 먼저 씁니다.</li><li>살충제는 보조로만 씁니다.</li></ul></td></tr>
-  <tr><td class="label">임산부</td>
-    <td>직접 뿌리지 않습니다.</td>
-    <td>약이 다 마른 뒤</td>
-    <td><ul><li>다른 가족이 뿌립니다.</li><li>뿌리는 동안 집 밖에 있습니다.</li></ul></td></tr>
-  <tr class="danger"><td class="label">고양이</td>
-    <td><strong>퍼메트린 사용 금지</strong></td>
-    <td>—</td>
-    <td><ul><li>퍼메트린이 없는 방법을 씁니다.</li></ul></td></tr>
-  <tr><td class="label">강아지</td>
-    <td>틈새만</td>
-    <td>다 마른 뒤</td>
-    <td><ul><li>뿌린 곳을 핥지 않게 합니다.</li></ul></td></tr>
-  <tr><td class="label">어항 물고기</td>
-    <td>같은 방에서는 뿌리지 않습니다.</td>
-    <td>—</td>
-    <td><ul><li>불가피하면 어항을 덮습니다.</li><li>뿌리는 동안 기포기를 끕니다.</li></ul></td></tr>
-</table>
-
-<h2 class="page-break"><span class="num">4</span>준비물</h2>
+<h2 class="page-break"><span class="num">5</span>준비물</h2>
 <div class="products">
   <div class="product"><svg width="150" height="186" viewBox="0 0 170 210">
   <ellipse cx="70" cy="198" rx="54" ry="6" fill="#e6e9e7"/>
@@ -401,39 +337,7 @@
 </div>
 <p class="note" style="text-align:center">그림은 이해를 돕기 위한 예시입니다.</p>
 <p class="note" style="text-align:center">실제 제품의 모양과 색은 다를 수 있습니다.</p>
-<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-mask" width="64" height="64"/></svg>KF94 마스크</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-gloves" width="64" height="64"/></svg>니트릴 장갑</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-trap" width="64" height="64"/></svg>끈끈이 트랩</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-dehum" width="64" height="64"/></svg>제습기</div></div>
-<table>
-  <tr><th style="width:24%">항목</th><th>내용</th></tr>
-  <tr><td class="label">살충제</td><td><ul>
-    <li>퍼메트린 성분의 가정용 살충제를 씁니다.</li>
-    <li>환경부 승인을 받은 살생물제품인지 확인합니다.</li>
-    <li>예: 파비 1L 리필용</li>
-  </ul></td></tr>
-  <tr><td class="label">라벨 확인</td><td><ul>
-    <li>유효성분이 퍼메트린인지 확인합니다.</li>
-    <li>대상 해충에 좀벌레가 있는지 확인합니다.</li>
-    <li>사용 장소와 주의 문구를 읽습니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">희석</td><td><ul>
-    <li>바로 쓰는 완제품은 희석하지 않습니다.</li>
-    <li>원액 제품은 라벨의 희석 비율을 따릅니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">분무기</td><td><ul>
-    <li>압축분무기를 씁니다.</li>
-    <li>예: 스마토 압축분무기 SM-CS5L</li>
-  </ul></td></tr>
-  <tr><td class="label">보호구</td><td><ul>
-    <li>KF94 마스크</li>
-    <li>니트릴 장갑</li>
-  </ul></td></tr>
-  <tr><td class="label">재발 방지용</td><td><ul>
-    <li>제습기</li>
-    <li>습도계</li>
-    <li>끈끈이 트랩</li>
-  </ul></td></tr>
-</table>
-
-<h3>분무기 설정</h3>
+<ul><li>바로 쓰는 완제품은 희석하지 않습니다.</li><li>원액 제품은 라벨의 희석 비율을 따릅니다.</li><li>분무기 노즐은 굵은 물줄기로 맞춥니다.</li></ul>
 <div class="figs"><div class="fig wide"><svg viewBox="0 0 240 118">
   <rect x="6" y="8" width="10" height="88" fill="#e3e7e3" stroke="#5b6660" stroke-width="1.2"/>
   <rect x="6" y="94" width="104" height="10" fill="#d9c7a5" stroke="#5b6660" stroke-width="1.2"/>
@@ -458,20 +362,8 @@
   <text x="222" y="31" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">X</text>
   <text x="180" y="115" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a2391f" font-family="NanumBarunGothic, NanumSquare, sans-serif">공중에 안개처럼 뿌리지 않기</text>
 </svg></div></div>
-<ul>
-  <li>노즐은 굵은 물줄기로 맞춥니다.</li>
-  <li>미세한 안개는 공기 중에 퍼집니다.</li>
-  <li>공기 중에 퍼진 약은 숨으로 들어옵니다.</li>
-  <li>분무기 통에 “살충제 전용”이라고 크게 적습니다.</li>
-  <li>이 분무기는 화분 물주기나 청소에 쓰지 않습니다.</li>
-  <li>그날 쓸 양만 통에 넣습니다.</li>
-  <li>집 한 채의 틈새에는 보통 0.5~1L면 충분합니다.</li>
-</ul>
 
-<h2 class="page-break"><span class="num">5</span>뿌리는 곳과 방법</h2>
-<p>좀벌레는 어둡고 습한 틈에 숨어 삽니다.</p>
-<p>틈새가 충분히 젖을 만큼 뿌립니다.</p>
-<p>바닥에 약이 고일 만큼 뿌리지는 않습니다.</p>
+<h2><span class="num">6</span>뿌리는 곳</h2>
 <div class="figs"><div class="fig"><svg viewBox="0 0 240 150">
   <rect x="10" y="6" width="34" height="120" fill="#e3e7e3" stroke="#5b6660" stroke-width="1.5"/>
   <text x="27" y="64" text-anchor="middle" font-size="12" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">벽</text>
@@ -535,204 +427,15 @@
   </g>
   <text x="120" y="137" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a2391f" font-family="NanumBarunGothic, NanumSquare, sans-serif">아이가 눕는 윗면은 뿌리지 않기</text>
 </svg><div class="cap">④ 매트리스 아랫면에 가볍게</div></div></div>
-<table>
-  <tr><th style="width:24%">장소</th><th style="width:38%">방법</th><th>주의</th></tr>
-  <tr><td class="label">걸레받이 안쪽<br>(장판과 벽 사이)</td>
-    <td><ul><li>걸레받이 아래쪽을 엽니다.</li><li>장판과 벽 사이 틈을 따라 충분히 뿌립니다.</li></ul></td>
-    <td><ul><li>가장 효과가 큰 곳입니다.</li><li>약이 다 마른 뒤 걸레받이를 닫습니다.</li></ul></td></tr>
-  <tr><td class="label">옷장 아래·뒤</td>
-    <td><ul><li>바닥과 옷장 사이 틈에 뿌립니다.</li></ul></td>
-    <td><ul><li>옷이 걸린 옷장 안쪽에는 뿌리지 않습니다.</li></ul></td></tr>
-  <tr><td class="label">가구 틈</td>
-    <td><ul><li>가구 아래에 뿌립니다.</li><li>가구와 벽 사이에 뿌립니다.</li></ul></td>
-    <td><ul><li>아이 손이 닿는 가구 표면은 피합니다.</li></ul></td></tr>
-  <tr><td class="label">침대 아래</td>
-    <td><ul><li>침대 프레임에 뿌립니다.</li><li>침대 아래 바닥에 뿌립니다.</li></ul></td>
-    <td><ul><li>이불과 베개에 튀지 않게 합니다.</li></ul></td></tr>
-  <tr><td class="label">냉장고 아래·옆</td>
-    <td><ul><li>바닥 쪽 틈만 노려 뿌립니다.</li></ul></td>
-    <td><ul><li>뒷면 컴프레서에는 뿌리지 않습니다.</li><li>전기 부품에는 뿌리지 않습니다.</li></ul></td></tr>
-  <tr><td class="label">어른 매트리스</td>
-    <td><ul><li>솔기에 가볍게 뿌립니다.</li><li>테두리와 옆면에 가볍게 뿌립니다.</li></ul></td>
-    <td><ul><li>매트리스를 적시지 않습니다.</li><li>하루 동안 말립니다.</li><li>방수 커버를 씌운 뒤 씁니다.</li></ul></td></tr>
-  <tr><td class="label">아이 매트리스<br>(1세 이상)</td>
-    <td><ul><li>아랫면에만 가볍게 뿌립니다.</li></ul></td>
-    <td><ul><li>하루 동안 말립니다.</li><li>나중에 뒤집어 쓰지 않습니다.</li><li>뿌린 면에 테이프로 표시합니다.</li></ul></td></tr>
-  <tr class="danger"><td class="label">아기 매트리스<br>(돌 전)</td>
-    <td><ul><li>뿌리지 않습니다.</li></ul></td>
-    <td><ul><li>세워서 말립니다.</li><li>햇볕에 말립니다.</li><li>바닥에 바로 깔지 않습니다.</li></ul></td></tr>
-</table>
-<p class="note">매트리스에서 나오는 1~2mm의 작은 벌레는 먼지다듬이일 수 있습니다.</p>
-<p class="note">먼지다듬이는 습기 때문에 생깁니다.</p>
-<p class="note">먼지다듬이가 나오면 매트리스를 세워서 말리는 것이 특히 중요합니다.</p>
+<ul><li>걸레받이를 떼고 벽과 장판 사이 틈에 뿌립니다.</li><li>옷장 아래와 뒤에 뿌립니다.</li><li>가구 틈 전부에 뿌립니다.</li><li>침대 아래에 뿌립니다.</li><li>냉장고 아래와 옆 틈에 뿌립니다.</li><li>어른 매트리스는 솔기와 옆면에 가볍게 뿌립니다.</li><li>아이 매트리스는 아랫면에만 가볍게 뿌립니다.</li><li>매트리스는 하루 말린 뒤 씁니다.</li></ul>
 
-<div class="keep">
-<h2><span class="num">6</span>일정: 한 달 간격 3회</h2>
-<p>한 번 뿌리면 어른 벌레는 죽습니다.</p>
-<p>하지만 알은 살아남습니다.</p>
-<p>좀벌레 알은 2~8주 뒤에 깨어납니다.</p>
-<p>그래서 한 달 간격으로 3번 뿌립니다.</p>
+<div class="keep"><h2><span class="num">7</span>일정</h2>
 <div class="timeline"><svg viewBox="0 0 600 94"><line x1="70" y1="34" x2="530" y2="34" stroke="#cfd8d2" stroke-width="4"/><text x="150" y="24" text-anchor="middle" font-size="10" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">1개월</text><text x="303" y="24" text-anchor="middle" font-size="10" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">1개월</text><text x="456" y="24" text-anchor="middle" font-size="10" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">1개월</text><circle cx="73" cy="34" r="17" fill="#2f6b4f"/><text x="73" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">1</text><text x="73" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">1회차</text><text x="73" y="86" text-anchor="middle" font-size="10.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">시작</text><circle cx="226" cy="34" r="17" fill="#2f6b4f"/><text x="226" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">2</text><text x="226" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">2회차</text><text x="226" y="86" text-anchor="middle" font-size="10.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">1개월 뒤</text><circle cx="379" cy="34" r="17" fill="#2f6b4f"/><text x="379" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">3</text><text x="379" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">3회차</text><text x="379" y="86" text-anchor="middle" font-size="10.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">2개월 뒤</text><circle cx="532" cy="34" r="17" fill="#2f80c0"/><text x="532" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="NanumBarunGothic, NanumSquare, sans-serif">✓</text><text x="532" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2a24" font-family="NanumBarunGothic, NanumSquare, sans-serif">확인</text><text x="532" y="86" text-anchor="middle" font-size="10.5" fill="#5b6660" font-family="NanumBarunGothic, NanumSquare, sans-serif">3개월 뒤</text></svg></div>
-<table class="keep">
-  <tr><th style="width:24%">시기</th><th>할 일</th></tr>
-  <tr><td class="label">1회차</td><td><ul>
-    <li>뿌리는 곳 전부에 뿌립니다.</li>
-    <li>같은 날 끈끈이 트랩을 놓습니다.</li>
-    <li>같은 날 제습을 시작합니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">2회차 (한 달 뒤)</td><td><ul>
-    <li>같은 곳에 다시 뿌립니다.</li>
-    <li>트랩에 잡힌 수를 적어 둡니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">3회차 (두 달 뒤)</td><td><ul>
-    <li>같은 곳에 마지막으로 뿌립니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">확인 (석 달 뒤)</td><td><ul>
-    <li>2주 동안 트랩에 한 마리도 없으면 퇴치 완료입니다.</li>
-    <li>계속 잡히면 습도부터 다시 점검합니다.</li>
-    <li>습도를 낮춘 뒤 한 번 더 뿌립니다.</li>
-  </ul></td></tr>
-</table>
-<p>뿌린 직후에는 벌레가 더 자주 보일 수 있습니다.</p>
-<p>약에 닿은 벌레가 틈에서 기어 나오기 때문입니다.</p>
-<p>퍼메트린은 벌레를 서서히 죽입니다.</p>
-<p>며칠 동안 지켜봅니다.</p>
-</div>
+<ul><li>좀벌레 알은 2~8주 뒤에 깨어납니다.</li><li>그래서 한 달 간격으로 3번 뿌립니다.</li><li>끈끈이 트랩에 2주 동안 안 잡히면 끝입니다.</li><li>습도를 50% 이하로 유지해야 다시 생기지 않습니다.</li></ul></div>
 
-<h2><span class="num">7</span>안전 수칙</h2>
-<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-out" width="64" height="64"/></svg>아이·동물 내보내기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-mask" width="64" height="64"/></svg>마스크 쓰기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-gloves" width="64" height="64"/></svg>장갑 끼기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-window" width="64" height="64"/></svg>창문 열기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-clock" width="64" height="64"/></svg>2~4시간 말리기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-soap" width="64" height="64"/></svg>비누로 씻기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-lock" width="64" height="64"/></svg>잠가서 보관</div></div>
-<div class="keep">
-<h3>뿌리기 전</h3>
-<ul class="check">
-  <li>아이를 외출시키거나 다른 방으로 보냅니다.</li>
-  <li>임산부도 다른 곳으로 갑니다.</li>
-  <li>반려동물을 다른 곳으로 옮깁니다.</li>
-  <li>장난감을 치웁니다.</li>
-  <li>젖병과 식기를 치웁니다.</li>
-  <li>음식을 치웁니다.</li>
-  <li>어항이 있으면 덮습니다.</li>
-  <li>마스크를 씁니다.</li>
-  <li>장갑을 낍니다.</li>
-</ul>
-</div>
-<div class="keep">
-<h3>뿌리는 중</h3>
-<ul class="check">
-  <li>창문을 엽니다.</li>
-  <li>틈새 가까이에서 뿌립니다.</li>
-  <li>공중에는 뿌리지 않습니다.</li>
-  <li>피부에 묻으면 바로 비누로 씻습니다.</li>
-</ul>
-</div>
-<div class="keep">
-<h3>뿌린 뒤</h3>
-<ul class="check">
-  <li>최소 2~4시간 동안 환기합니다.</li>
-  <li>매트리스는 하루 동안 말립니다.</li>
-  <li>뿌린 틈새는 닦지 않습니다.</li>
-  <li>틈새에 남은 약이 효과를 이어 갑니다.</li>
-  <li>손 닿는 바닥에 튄 약은 물걸레로 닦습니다.</li>
-  <li>손과 얼굴을 비누로 씻습니다.</li>
-  <li>입었던 옷은 따로 빨래합니다.</li>
-  <li>분무기를 물로 헹굽니다.</li>
-  <li>헹군 물은 처리한 틈새에 뿌립니다.</li>
-  <li>헹군 물은 하수구에 버리지 않습니다.</li>
-</ul>
-<p class="note">퍼메트린은 물고기에게 독성이 강합니다.</p>
-</div>
-<div class="keep">
-<h3>보관</h3>
-<ul>
-  <li>살충제 병은 잠금 수납장에 둡니다.</li>
-  <li>잠금 수납장이 없으면 아이 손이 닿지 않는 높은 곳에 둡니다.</li>
-  <li>분무기는 물통처럼 보입니다.</li>
-  <li>아이가 분무기를 장난감으로 착각할 수 있습니다.</li>
-  <li>약이 든 채로 분무기를 두지 않습니다.</li>
-  <li>약을 다른 병에 옮겨 담지 않습니다.</li>
-  <li>음료수 병에는 절대 옮겨 담지 않습니다.</li>
-</ul>
-</div>
-
-<h2 class="page-break"><span class="num">8</span>재발 방지</h2>
-<p class="lead">실내 습도를 50% 이하로 유지하는 것이 가장 중요합니다.</p>
-<p>습도가 높으면 3번을 다 뿌려도 다시 생깁니다.</p>
-<table class="keep">
-  <tr><th style="width:24%">항목</th><th>방법</th></tr>
-  <tr><td class="label">습도</td><td><ul>
-    <li>제습기를 돌립니다.</li>
-    <li>습도계로 습도를 확인합니다.</li>
-    <li>욕실을 자주 환기합니다.</li>
-    <li>싱크대 아래를 자주 환기합니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">매트리스</td><td><ul>
-    <li>바닥에 바로 깔지 않습니다.</li>
-    <li>매트리스 밑에 받침을 둡니다.</li>
-    <li>한 달에 한 번은 세워서 말립니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">먹이 제거</td><td><ul>
-    <li>좀벌레는 종이, 풀, 먼지를 먹습니다.</li>
-    <li>오래된 종이 상자를 버립니다.</li>
-    <li>쌓아 둔 신문과 책을 정리합니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">감시</td><td><ul>
-    <li>끈끈이 트랩을 걸레받이 옆에 계속 둡니다.</li>
-    <li>끈끈이 트랩을 가구 아래에 계속 둡니다.</li>
-    <li>다시 잡히기 시작하면 한 번 더 뿌립니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">보조 수단</td><td><ul>
-    <li>붕산이나 규조토를 걸레받이 안쪽에 얇게 뿌립니다.</li>
-    <li>붕산과 규조토는 효과가 오래갑니다.</li>
-    <li>붕산과 규조토도 아이 손이 닿지 않는 곳에만 둡니다.</li>
-  </ul></td></tr>
-</table>
-
-<h2 class="page-break"><span class="num">9</span>하지 말 것과 응급 대처</h2>
-<div class="warnbox">
-  <h3>하지 말 것</h3>
-<div class="picto-row"><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-cat" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>고양이 있는 집</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-mist" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>공중 분사</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-bed" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>이불·베개</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-crib" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>아기 침대</div><div class="picto no"><svg viewBox="-9 -9 82 82"><use href="#i-fish" width="64" height="64"/><use href="#i-no" width="64" height="64"/></svg>어항 있는 방</div></div>
-  <ul class="cols">
-    <li>고양이가 있는 집에서는 퍼메트린을 쓰지 않습니다.</li>
-    <li>공중에 안개처럼 뿌리지 않습니다.</li>
-    <li>방 전체에 뿌리지 않습니다.</li>
-    <li>이불과 베개에 뿌리지 않습니다.</li>
-    <li>옷에 뿌리지 않습니다.</li>
-    <li>장난감에 뿌리지 않습니다.</li>
-    <li>식탁에 뿌리지 않습니다.</li>
-    <li>돌 전 아기의 침대에 뿌리지 않습니다.</li>
-    <li>돌 전 아기의 매트리스에 뿌리지 않습니다.</li>
-    <li>아이가 자는 방에서 뿌리지 않습니다.</li>
-    <li>여러 살충제를 섞어 쓰지 않습니다.</li>
-  </ul>
-</div>
-
-<h3>응급 대처</h3>
-<div class="picto-row"><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-soap" width="64" height="64"/></svg>피부는 비누로</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-window" width="64" height="64"/></svg>바깥 공기로</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-bottle" width="64" height="64"/></svg>제품 병 챙기기</div><div class="picto"><svg viewBox="-9 -9 82 82"><use href="#i-119" width="64" height="64"/></svg>숨차면 119</div></div>
-<table>
-  <tr><th style="width:28%">상황</th><th>바로 할 일</th></tr>
-  <tr><td class="label">피부에 묻음</td><td><ul>
-    <li>비누와 물로 씻습니다.</li>
-    <li>따끔거림은 보통 하루 안에 사라집니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">눈에 들어감</td><td><ul>
-    <li>흐르는 물로 15분 이상 헹굽니다.</li>
-    <li>통증이 남으면 안과에 갑니다.</li>
-  </ul></td></tr>
-  <tr><td class="label">들이마셔서 기침·쌕쌕거림</td><td><ul>
-    <li>바로 바깥 공기가 있는 곳으로 나갑니다.</li>
-    <li>숨이 차면 119에 연락합니다.</li>
-  </ul></td></tr>
-  <tr class="danger"><td class="label">아이가 마시거나 핥음</td><td><ul>
-    <li>억지로 토하게 하지 않습니다.</li>
-    <li>제품 병을 챙깁니다.</li>
-    <li>바로 병원에 가거나 119에 연락합니다.</li>
-  </ul></td></tr>
-  <tr class="danger"><td class="label">고양이가 노출됨</td><td><ul>
-    <li>떨림이 보이면 바로 동물병원에 갑니다.</li>
-    <li>침을 흘려도 바로 동물병원에 갑니다.</li>
-  </ul></td></tr>
-</table>
-<p>병원에 갈 때는 제품 병을 꼭 챙깁니다.</p>
-<p>라벨의 성분과 함량이 치료에 필요합니다.</p>
+<div class="keep"><h2><span class="num">8</span>사고가 나면</h2>
+<ul><li>피부에 묻으면 비누로 씻습니다.</li><li>눈에 들어가면 흐르는 물로 15분 헹굽니다.</li><li>아이가 마셨으면 억지로 토하게 하지 않습니다.</li><li>제품 병을 들고 바로 병원에 갑니다.</li><li>숨이 차면 119에 연락합니다.</li></ul>
+<p class="note">이 매뉴얼은 의사의 진료를 대신하지 않습니다.</p></div>
 
 </body>
 </html>
